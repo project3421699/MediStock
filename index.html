@@ -2422,8 +2422,15 @@ function downloadBPPDF() {
   doc.setFont('helvetica','bold');
   doc.setFontSize(20);
 
-  doc.text('BLOOD PRESSURE REPORT',148.5,18,{align:'center'});
+  doc.text(
+    'BLOOD PRESSURE REPORT',
+    105,
+    18,
+    {align:'center'}
+  );
 
+  doc.setLineWidth(0.4);
+  doc.line(65,21,145,21);
   doc.setLineWidth(0.5);
   doc.line(95,22,202,22);
 
@@ -2455,7 +2462,7 @@ function downloadBPPDF() {
 
   sortedDates.forEach(date => {
 
-    if (y > 185) {
+    if (y > 255) {
       doc.addPage();
       y = 20;
     }
