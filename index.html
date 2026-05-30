@@ -2465,10 +2465,7 @@ function downloadBPPDF() {
     const startX = 15;
     const dateColW = 40;
 
-    const timeColW = Math.min(
-      28,
-      Math.max(24, Math.floor((260 - dateColW) / times.length))
-    );
+    const timeColW = 40;
 
     const rowH = 10;
 
@@ -2533,7 +2530,7 @@ function downloadBPPDF() {
       doc.rect(x,y,timeColW,rowH);
 
       doc.text(
-        String(byDate[date][t] || '—'),
+        String(byDate[date][t] +" mmHg" || '—'),
         x + timeColW/2,
         y + 6,
         {align:'center'}
